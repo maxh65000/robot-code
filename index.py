@@ -80,9 +80,9 @@ while True:
         is1onwhite = line_tracker_1.raw_value() < 600 #less than 600 = white
         is2onwhite = line_tracker_2.raw_value() < 600
 
-        left_speed = 25
-        right_speed = 25
-        bonus = 7
+        left_speed = 20
+        right_speed = 20
+        bonus = 5
 
         if is1onwhite and is2onwhite:
             left_wheel.run(left_speed)
@@ -94,8 +94,8 @@ while True:
             right_wheel.run(left_speed + bonus)
             left_wheel.off()
         else:
-            left_wheel.off()
-            right_wheel.off()
+            left_wheel.run(left_speed)
+            right_wheel.run(right_speed)
 
     # obstacle sensor
     elif mode == 2:
